@@ -44,7 +44,7 @@ export default {
           '0%': { transform: 'rotate(-360deg)' },
           '100%': { transform: 'rotate(0deg)' },
         },
-        pulse-glow: {
+        'pulse-glow': {
           '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
           '50%': { opacity: '0.85', transform: 'scale(1.06)' },
         },
