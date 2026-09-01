@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-white font-body antialiased;
+    background-image: radial-gradient(
+        circle at 15% 0%,
+        rgba(19, 57, 224, 0.16) 0%,
+        transparent 45%
+      ),
+      radial-gradient(circle at 85% 20%, rgba(61, 107, 255, 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: #1339e0;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #7fa8ff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-lab {
+    @apply mx-auto w-full max-w-[1200px] px-6 sm:px-8 lg:px-10;
+  }
+
+  .glass-panel {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .grid-texture {
+    background-image: linear-gradient(rgba(127, 168, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(127, 168, 255, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 85%);
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-brand
+      px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-300
+      hover:bg-brand-light active:scale-[0.97];
+    box-shadow: 0 0 0 0 rgba(61, 107, 255, 0.5);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 32px 4px rgba(61, 107, 255, 0.5);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border
+      border-white/20 bg-white/5 px-7 py-3.5 text-[15px] font-semibold text-white
+      backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10
+      active:scale-[0.97];
+  }
+
+  .eyebrow-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-glow/25
+      bg-brand-glow/10 px-4 py-1.5 text-sm font-medium text-brand-glow;
+  }
+}
+
+/* Scroll reveal: elements start hidden and animate in once, on entering the viewport */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar - subtle, on-brand */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #03040f;
+}
+::-webkit-scrollbar-thumb {
+  background: #1339e0;
+  border-radius: 8px;
+}
