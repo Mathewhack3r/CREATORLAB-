@@ -1,4 +1,4 @@
-import { Video, Captions, Sparkles, TrendingUp, Play } from 'lucide-react'
+import { Video, Captions, TrendingUp, Play } from 'lucide-react'
 import logo from '../assets/logo.png'
 
 export default function Hero() {
@@ -21,12 +21,7 @@ export default function Hero() {
       <div className="container-lab relative grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         {/* Left: copy */}
         <div className="relative z-10 text-center lg:text-left">
-          <span className="eyebrow-pill">
-            <Sparkles size={14} />
-            AI-powered creator education
-          </span>
-
-          <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4rem]">
+          <h1 className="text-[2.6rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-[4rem]">
             Learn. Create.
             <br />
             <span className="bg-gradient-to-r from-brand-glow via-brand-light to-brand bg-clip-text text-transparent">
